@@ -35,8 +35,8 @@ def createTeamCSVFile(jsonContent, updateDate):
 
             csv_writer.writerow([header])
 
-        csv_writer.writerow([team['id'] ,team['runDoi']['ten'], team['soVanDongVien'], team['quangDuong'], team['thoiGian'], updateDateStr])
-        total_writer.writerow([team['id'] ,team['runDoi']['ten'], team['soVanDongVien'], team['quangDuong'], team['thoiGian'], updateDateStr])
+        csv_writer.writerow([team['runDoiId'] ,team['runDoi']['ten'], team['soVanDongVien'], team['quangDuong'], team['thoiGian'], updateDateStr])
+        total_writer.writerow([team['runDoiId'] ,team['runDoi']['ten'], team['soVanDongVien'], team['quangDuong'], team['thoiGian'], updateDateStr])
         count += 1
         if count > 19:
             break;
@@ -154,7 +154,7 @@ def DownloadTeamData():
     print (response.content)
     createTeamCSVFile(response.content, currentTime)
 
-#DownloadTeamData()
+DownloadTeamData()
 
 currentTime=getLocalTime()
 if currentTime.hour in (1,13):
