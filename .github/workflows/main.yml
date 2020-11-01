@@ -3,11 +3,10 @@ name: CI Download BIDV Club Data
 on:
 
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 4 * * *'
+    - cron: '0 18 * * *'
 
-  push:
-    branches:
-      - main
+
 jobs:
   Download_BIDVRun_TeamData:
     runs-on: ubuntu-latest
