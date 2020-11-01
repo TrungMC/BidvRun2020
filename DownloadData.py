@@ -47,7 +47,7 @@ def DownloadTeamData():
     currentTime = getLocalTime()
     if (IsInterestedHour(currentTime))==False:
         print ("Skip this hour")
-        #return
+        return
 
     requestId=uuid.uuid4().hex
 
