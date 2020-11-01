@@ -28,6 +28,7 @@ jobs:
           git config --global user.name 'trungmc'
           git config --global user.email 'trungmc@yahoo.com'
           git add .
+          git pull --rebase origin main
           git commit --allow-empty -am "Update team data"
           git push origin main
           git status     
