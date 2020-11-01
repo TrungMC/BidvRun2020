@@ -23,8 +23,8 @@ def createTeamCSVFile(jsonContent, updateDate):
     data = json.loads(jsonContent)['body']['results']
 
     count = 0;
-    data_file = open('data/'+fileName + '.csv', 'w', encoding="utf-8-sig",newline='')
-    total_file = open('data/Summary.csv', 'a', encoding="utf-8-sig",newline='')
+    data_file = open('data/teams/'+fileName + '.csv', 'w', encoding="utf-8-sig",newline='')
+    total_file = open('data/teams/ummary.csv', 'a', encoding="utf-8-sig",newline='')
     csv_writer = csv.writer(data_file)
     total_writer = csv.writer(total_file)
 
@@ -51,9 +51,9 @@ def createRunnerCSVFile(jsonContent, updateDate,teamID, page):
     count = 0;
 
     if (page==0):
-        data_file = open('data/'+fileName + '.csv', 'w', encoding="utf-8-sig",newline='')
+        data_file = open('data/runners/'+fileName + '.csv', 'w', encoding="utf-8-sig",newline='')
     else:
-        data_file = open('data/' + fileName + '.csv', 'a', encoding="utf-8-sig", newline='')
+        data_file = open('data/runners' + fileName + '.csv', 'a', encoding="utf-8-sig", newline='')
 
     total_file = open('data/RunnerSummary.csv', 'a', encoding="utf-8-sig",newline='')
     csv_writer = csv.writer(data_file)
@@ -156,14 +156,7 @@ def DownloadTeamData():
 
 DownloadTeamData()
 
-currentTime=getLocalTime()
-if currentTime.hour in (1,13):
-    DownloadTeamData()
-
-    #Download Runner Details
-    FocusTeams=[771, 790,787, 770, 765, 769]
-    for i in FocusTeams:
-        DownloadRunnerData(str(i))
-else:
-    print ("Skipped hour")
+FocusTeams=[771, 790,787, 770, 765, 769]
+for i in FocusTeams:
+   DownloadRunnerData(str(i))
 
