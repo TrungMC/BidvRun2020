@@ -9,7 +9,7 @@ on:
     branches:
       - main
 jobs:
-  Download BIDV Run TeamData:
+  Download_BIDVRun_TeamData:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
