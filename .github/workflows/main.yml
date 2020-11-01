@@ -7,7 +7,7 @@ on:
 
   push:
     branches:
-      - master
+      - main
 jobs:
   Download BIDV Run TeamData:
     runs-on: ubuntu-latest
