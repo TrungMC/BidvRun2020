@@ -74,4 +74,5 @@ def DownloadTeamData():
     
 print ('Downloading Team Data')
 DownloadTeamData()
+print ('Completed downloading')
 
