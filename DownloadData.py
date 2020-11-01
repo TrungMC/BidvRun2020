@@ -20,8 +20,8 @@ def createTeamCSVFile(jsonContent, updateDate):
     data = json.loads(jsonContent)['body']['results']
 
     count = 0;
-    data_file = open('data/'+fileName + '.csv', 'w', encoding="utf-8-sig")
-    total_file = open('data/Summary.csv', 'a', encoding="utf-8-sig")
+    data_file = open('data/'+fileName + '.csv', 'w', encoding="utf-8-sig",newline='')
+    total_file = open('data/Summary.csv', 'a', encoding="utf-8-sig",newline='')
     csv_writer = csv.writer(data_file)
     total_writer = csv.writer(total_file)
 
@@ -47,7 +47,7 @@ def DownloadTeamData():
     currentTime = getLocalTime()
     if (IsInterestedHour(currentTime))==False:
         print ("Skip this hour")
-        return
+        #return
 
     requestId=uuid.uuid4().hex
 
