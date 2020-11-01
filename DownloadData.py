@@ -71,6 +71,7 @@ def DownloadTeamData():
     response = requests.post('https://bidvrun.com/bidvrunapiapp/global/vn/bidvrun/forward_unauth/v1', headers=headers, data=data, verify=False)
 
     createTeamCSVFile(response.content, currentTime)
-
+    
+print ('Downloading Team Data')
 DownloadTeamData()
 
