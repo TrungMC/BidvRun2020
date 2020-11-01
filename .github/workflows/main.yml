@@ -9,7 +9,7 @@ on:
     branches:
       - master
 jobs:
-  JsonUpgrades:
+  Download BIDV Run TeamData:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,5 +29,7 @@ jobs:
           git config --global user.email 'trungmc@yahoo.com'
           git add .
           git commit --allow-empty -am "Update team data"
-          git push
+          git push origin main
           git status     
+          
+
