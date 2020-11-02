@@ -33,7 +33,7 @@ def createTeamCSVFile(jsonContent, updateDate):
         if count == 0:
             header = "id, ten, soVanDongVien, quangDuong, thoiGian, updatedate"
 
-            csv_writer.writerow([header])
+            csv_writer.writerow(header)
 
         csv_writer.writerow([team['runDoiId'] ,team['runDoi']['ten'], team['soVanDongVien'], team['quangDuong'], team['thoiGian'], updateDateStr])
         total_writer.writerow([team['runDoiId'] ,team['runDoi']['ten'], team['soVanDongVien'], team['quangDuong'], team['thoiGian'], updateDateStr])
