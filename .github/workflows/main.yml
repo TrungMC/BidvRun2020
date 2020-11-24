@@ -3,8 +3,6 @@ name: CI Download BIDV Club Data
 on:
 
   schedule:
-    - cron: '0 4 * * *'
-    - cron: '0 18 * * *'
 
 
 jobs:
